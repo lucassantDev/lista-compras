@@ -44,6 +44,44 @@ main{
     height: 100vh;
 }
 
+.background-blur{
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    display: none;
+    
+}
+
+.mensagem-alerta{
+    display: none;
+    width: 30%;
+    height: 200px;
+    border: 2px solid var(--color-brand);
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    position: fixed;
+    top: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.fechar-mensagem-alerta{
+    background-color: var(--color-brand);
+    width: 100px;
+    height: 20px;
+    color: var(--always-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 10px 0 0 10px;
+}
+
 #secao-01{
     width: 60%;
     height: 100px;
@@ -57,13 +95,12 @@ main{
     width: 140px;
     color: var(--color-brand);
     margin: 0 0 0 140px;
-
 }
 
 #opcao-voltar span{
     font-weight: bolder;
     margin: 0 0 0 10px;
-    }
+}
 
 #titulo-compras{
     margin: 10px 0 0 140px;
@@ -107,19 +144,23 @@ input{
 
 #secao-03{
     width: 60%;
-    height: fit-content;
+    height: 150px;
+    padding-block: 20px;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     flex-direction: column;
+    overflow: hidden;
+    overflow-y: scroll;
 }
-
 
 .item-informado{
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 627px;
-    height: 49px;
+    height: 100px;
+    padding-block: 20px;
     margin: 10px 0 10px 0;
     background-color: var(--background-secondary) ;
 }
@@ -141,6 +182,7 @@ input{
     margin: 0 0 0 -30px;
     text-align: left;
     width: 250px;
+    font-weight: bold;
 }
 
 .remover-item{
@@ -152,18 +194,15 @@ input{
         display: flex;
         align-items: center;
     }
-
-    main{
-        height: 100vh;
+    .mensagem-alerta{
+        width: 80%;
     }
 
     #secao-01{
         width: 100%;
         height: fit-content;
         padding-top: 50px;
-
         display: flex;
-
     }
 
     #opcao-voltar{
@@ -190,16 +229,14 @@ input{
     }
 
     #novo-item{
-        width: 350px;
+        width: 300px;
     }
 
     #adicionar-item{
-        width: 360px;
+        width: 100%;
         height: 48px;
         font-weight: bold;
-
         margin-top: 10px;
-    
     }
 
    #secao-03{
@@ -211,11 +248,9 @@ input{
         font-size: 1rem;
         font-weight: bold;
         color: var(--content-secondary);
-
    }
 
    .item-informado p{
         margin: 0 0 0 30px ;
    }
-   
 }

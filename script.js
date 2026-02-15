@@ -2,6 +2,8 @@
 const botaoNovoItem = document.getElementById('adicionar-item');
 const secaoItens = document.querySelector('#secao-03');
 const removerItem = document.querySelector('.remover-item')
+const mensagemAlerta = document.querySelector('.mensagem-alerta')
+const backgroundMensagem = document.querySelector('.background-blur')
 
 // eventos e funções
 
@@ -13,6 +15,11 @@ function removendoItemEscolhido(elemento){
     return elemento.remove();
 }
 
+function fecharMensagemAlerta(){
+    mensagemAlerta.style.display = "none";
+    backgroundMensagem.style.display = "none";
+}
+
 // capturando o item depois do clique no botão adicionar item
 botaoNovoItem.addEventListener('click', (event) => {
     event.preventDefault();
@@ -20,7 +27,8 @@ botaoNovoItem.addEventListener('click', (event) => {
     // capturando o valor do input de item
     let item = document.getElementById('novo-item');
     if(item.value === ''){
-        alert('Não é possível cadastrar o produto');
+        backgroundMensagem.style.display = "flex";
+        mensagemAlerta.style.display = "flex";
     }else{
         // criando div que irá conter o elemento e posteriormente irá aparecer no html
         let espacoItem = document.createElement('div');
