@@ -8,64 +8,52 @@
     <title>Lista de Compras</title>
 </head>
 <body>
+    <div class="background-blur"></div>
     <header>
         <img src="img/logo.svg" alt="logo quicklist">
     </header>
     <main>
-        <section id="secao-01">
-            <div id="opcao-voltar">
-                <div><i class="fa-solid fa-arrow-left"></i></div>
-                <span>Voltar</span>
-            </div>
-            <div id="titulo-compras">
-                <h1>Compras da semana</h1>
-            </div>
-        </section>
 
-        <section id="secao-02">
-            <div id="input-botaoAdicionar">
-                <input type="text" id="novo-item" placeholder="Informe o item">
-                <button type="submit" id="adicionar-item">Adicionar item</button>
-            </div>
-        </section>
+        <div class="mensagem-alerta">
+            <p><strong>Você não informou nenhum item!</strong></p>
+            <p class="fechar-mensagem-alerta" onclick="fecharMensagemAlerta()">X</p>
+        </div>
 
-        <section id="secao-03">
-
-            <div class="item-informado">
-                <input type="checkbox" name="" id=""> 
-                <p> Pão </p>
-                <div class="centralizar-icone">
-                    <span class="remover-item">🗑️</span>
+        
+            <section id="secao-01">
+                <div id="opcao-voltar">
+                    <div><i class="fa-solid fa-arrow-left"></i></div>
+                    <span>Voltar</span>
                 </div>
-            </div>
+                <div id="titulo-compras">
+                    <h1>Compras da semana</h1>
+                </div>
+            </section>
+            <section id="secao-02">
+                <div id="input-botaoAdicionar">
+                    <input type="text" id="novo-item" placeholder="Informe o item">
+                    <button type="submit" id="adicionar-item">Adicionar item</button>
+                </div>
+            </section>
+            <section id="secao-03">
+                <div class="item-informado">
+                    <input type="checkbox" name="" id="">
+                    <p> Pão </p>
+                    <div class="centralizar-icone">
+                        <span class="remover-item">🗑️</span>
+                    </div>
+                </div>
             
-            <!-- <div class="item-informado">
-                <input type="checkbox" name="" id=""> 
-                <p> Café </p>
-                <div class="centralizar-icone">
-                    <span class="remover-item">🗑️</span>
+                <div class="item-informado">
+                    <input type="checkbox" name="" id="">
+                    <p> Café </p>
+                    <div class="centralizar-icone">
+                        <span class="remover-item">🗑️</span>
+                    </div>
                 </div>
-
-            </div>
-            <div class="item-informado">
-                <input type="checkbox" name="" id=""> 
-                <p> Suco de laranja </p>
-                <div class="centralizar-icone">
-                    <span class="remover-item" onclick="removendoItemEscolhido()">🗑️</span>
-                </div>
-
-            </div>
-            <div class="item-informado">
-                <input type="checkbox" name="" id=""> 
-                <p> Bolacha </p>
-                <div class="centralizar-icone">
-                    <span class="remover-item">🗑️</span>
-                </div>
-            </div> -->
-
+            
         </section>
     </main>
-
     <script src="script.js"></script>
 </body>
 </html>
