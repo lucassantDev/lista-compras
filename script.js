@@ -15,10 +15,16 @@ function removendoItemEscolhido(elemento){
     return elemento.remove();
 }
 
+function AbrirMensagemAlerta() {
+    mensagemAlerta.style.display = "flex";
+    backgroundMensagem.style.display = "flex";
+}
+
 function fecharMensagemAlerta(){
     mensagemAlerta.style.display = "none";
     backgroundMensagem.style.display = "none";
 }
+
 
 // capturando o item depois do clique no botão adicionar item
 botaoNovoItem.addEventListener('click', (event) => {
@@ -26,10 +32,14 @@ botaoNovoItem.addEventListener('click', (event) => {
     
     // capturando o valor do input de item
     let item = document.getElementById('novo-item');
+
     if(item.value === ''){
-        backgroundMensagem.style.display = "flex";
-        mensagemAlerta.style.display = "flex";
-    }else{
+        AbrirMensagemAlerta()
+    } else if (item.value != '') {
+
+        fecharMensagemAlerta()
+        let upperCaseItem = item.value.toUpperCase()
+
         // criando div que irá conter o elemento e posteriormente irá aparecer no html
         let espacoItem = document.createElement('div');
 
@@ -45,7 +55,7 @@ botaoNovoItem.addEventListener('click', (event) => {
         let spanIconeLixeira = document.createElement('span');
 
         // informando o item informado, criando um texto e armazenando na variavel valorItem
-        let valorItem = document.createTextNode(`${item.value}`);
+        let valorItem = document.createTextNode(`${upperCaseItem}`);
         let iconeLixeira = document.createTextNode('🗑️');
 
         // adicionando o elemento filho no elemento pai
@@ -55,7 +65,6 @@ botaoNovoItem.addEventListener('click', (event) => {
 
         centralizarSpan.appendChild(spanIconeLixeira);
         
-
         espacoItem.appendChild(checkboxHTML)
         espacoItem.appendChild(paragrafo);
         espacoItem.appendChild(centralizarSpan);
