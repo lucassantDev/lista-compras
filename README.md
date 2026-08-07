@@ -1,6 +1,6 @@
 # lista-compras
 
-<!-- <img src='/pomodoro.png'/> -->
+<img src='/lista-de-compras.png'/> 
 
 ### 💻 Stacks:
 <p align="center">
